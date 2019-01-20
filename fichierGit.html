@@ -1,0 +1,30 @@
+<html>
+    <head>
+     <title>Calcul Temps</title>
+	<head>
+	
+	<body>
+	    <center>
+	    <h1>Conversion du temps</h1>
+		<form method = "post" action = "temps.php">
+		  Heure :  <input type ="text" name="h"> <br/>
+		  Minute : <input type ="text" name="m"> <br/>
+		  Seconde : <input type="text" name="s"> <br/>
+		  <input type="reset" name="Annuler" value="Annuler">
+		  <input type="submit" name="Convertir" value="Convertir">
+		</form>
+		
+		<?php
+		 if (isset($_POST["Convertir"]))
+		 {
+			$h = $_POST["h"];
+		    $m = $_POST["m"];
+			$s = $_POST["s"];
+			
+			$t = $h * 3600 + $m * 60 + $s;
+			printf("Le temps en seconde est de %d secondes.", $t);
+		 }
+		?>
+		</center>
+	</body>
+</html>	
